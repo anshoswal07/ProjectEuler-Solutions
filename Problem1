@@ -1,0 +1,17 @@
+#Initialising the total as 0 before calculation
+total = 0
+
+#Running a loop from 1 to given value to test each value for conditions
+for x in range(1,1000):
+    #Checking whether both conditions are satisfied first to avoid miscalculations and using elif
+    if x % 3 == 0 and x % 5 == 0:
+        total += x
+        
+    elif x % 5 == 0:
+        total += x
+        
+    elif x % 3 == 0:
+        total += x
+        
+#Output of the total       
+print(total)
