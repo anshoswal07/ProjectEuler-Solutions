@@ -1,0 +1,31 @@
+#Function to check if given value is even
+def even(num):
+    if num % 2 == 0:
+        return True
+    
+#Initialisation of total to be zero
+total = 0
+
+#Starting values of code for the Fibonacci sequence that starts from 1
+a = 1
+b = 0 
+c = 1 
+
+#Parameter of calculation being value of the sequence should be less that 4 million
+while a < 4000000 and b < 4000000 and c < 4000000:
+    
+    #Code for the Fibonacci Sequence
+    b = a + c
+    c = b + a
+    a = c + b
+    
+    #If any of three variables are even, total is incremented
+    if even(a):
+        total += a
+    if even(b):
+        total += b
+    if even(c):
+        total += c
+
+#Output of total
+print(total)
