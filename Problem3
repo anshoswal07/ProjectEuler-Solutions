@@ -1,0 +1,33 @@
+#Importing the math module
+import math
+
+#Defining a function to check whether a given number is prime
+def isprime(n):
+    #If number is 0 or negative, test for prime will return false
+    if n <= 1:
+        return False
+    #If number is 2, will return true as 2 is a prime number
+    if n == 2:
+        return True
+    #If number is greater than two but divisible by two, i.e, is even, then number is not prime
+    if n > 2 and n % 2 == 0:
+        return False
+        
+    
+    #Every numbers will always have a factor below its square root
+    max_div = math.floor(math.sqrt(n))
+    
+    #Iterates between all odd numbers between the max value
+    for i in range(3, 1 + max_div, 2):
+        if n % i == 0:
+            return False
+    return True
+
+#Takes in the value provided in the questions
+inp = int(input("Enter your number"))
+
+#Runs reverse and breaks when the first prime integer is found
+for x in range(inp, 1, -2):
+    if inp % x == 0 and isprime(x):
+        print(x)
+        break
