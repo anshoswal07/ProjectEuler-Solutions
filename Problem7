@@ -1,0 +1,30 @@
+#Importing a math module that will help in calculations
+import math
+
+#Defining a function to check if a value is prime
+def prime(n):
+    #Any number must have a integer factor before its half value if it is not prime
+    minval = math.floor(n/2 + 1)
+    for i in range(2, minval):
+        Checks if factor is true, and once it iterates through all the numbers returns False if any factor is detected
+        if n % i == 0:
+            return False
+    #If no factor was detected returns True as num is prime
+    return True
+
+#Starting of with consideration of number 2 being prime in the number of primes
+primenums = 1
+#Starting value
+val = 3
+
+#Loop runs until the number of prime numbers = 10001
+while primenums != 10001:
+
+    #If num is prime the number of prime numbers increments by one
+    if prime(val):
+        primenums += 1
+    #Adds two to original value 3 and hence runs through only odd numbers for efficiency
+    val += 2
+
+#Prints out the right value remembering that +2 has been added
+print(val - 2)
