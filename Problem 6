@@ -1,0 +1,21 @@
+#Function to calculate sum of squares, taking in parameter num
+def sum_of_squares(num):
+    #Sum of squares, i.e, summation(n^2) is a known value given by the formula below
+    val = (1/6) * (num) * (num + 1) * (2 * num + 1)
+    return val
+
+#Function to calcuate the square of the sum, taking in parameter num
+def square_of_sum(num):
+    #First calculating sum of natural numbers till n
+    val = (1/2) * (num) * (num + 1)
+    #Then squaring the value
+    val = val ** 2
+    return val
+
+#Function to return difference of values taking in parameter x
+def difference(x):
+    diff = square_of_sum(x) - sum_of_squares(x)
+    return diff
+    
+#Returning value of difference with given test set of '100'   
+difference(100)
